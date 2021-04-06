@@ -19,13 +19,6 @@ function Symbols = Mod(Bits, mod_size)
     % 4QAM case
     elseif mod_size == 4
         
-        % 4QAM requires a sequence of even length
-        if mod(length(Bits),2) ~= 0
-            
-            % issue error if the length of data sequence is not even
-            error("Expected Data Sequence of Even Length for 4QAM Modulation");
-        end
-        
         % create empty sequence of symbols
         Symbols = zeros(1,length(Bits)/2);
         
@@ -43,9 +36,5 @@ function Symbols = Mod(Bits, mod_size)
                 Symbols(n) = (1 - 1i)/sqrt(2);
             end
         end
-        
-    % issue error if invalid modulation size is provided
-    else
-        error("Invalid Modulation Size");
     end
 end

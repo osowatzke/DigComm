@@ -6,7 +6,7 @@ function Noise = NoiseGeneration(Length)
     real_noise = 1/sqrt(2)*randn(1,Length);
     
     % generate complex noise with variance 1/sqrt(2)
-    imag_noise = 1/sqrt(2)*randn(1,Length);
+    imag_noise = 1i/sqrt(2)*randn(1,Length);
     
     % sum both real and imaginary noise to get complex noise
     Noise = real_noise + imag_noise;

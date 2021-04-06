@@ -35,11 +35,11 @@ function est_bits = Demod(est_sym)
         for n = 1:length(est_sym)
             
             % consider all four cases
-            if real(est_sym) > 0 && imag(est_sym) > 0
+            if real(est_sym(n)) > 0 && imag(est_sym(n)) > 0
                 est_bits(2*n-1:2*n) = [0 0];
-            elseif real(est_sym) < 0 && imag(est_sym) > 0
+            elseif real(est_sym(n)) < 0 && imag(est_sym(n)) > 0
                 est_bits(2*n-1:2*n) = [0 1];
-            elseif real(est_sym) < 0 && imag(est_sym) < 0
+            elseif real(est_sym(n)) < 0 && imag(est_sym(n)) < 0
                 est_bits(2*n-1:2*n) = [1 0];
             else
                 est_bits(2*n-1:2*n) = [1 1];

@@ -11,7 +11,7 @@ function est_sym = receiver(y, mod_size)
         for n = 1:length(y)
             
             % determine if the received symbol should be a -1 or a 1
-            if real(y) < 0
+            if real(y(n)) < 0
                 est_sym(n) = -1;
             else
                 est_sym(n) = 1;
@@ -25,14 +25,14 @@ function est_sym = receiver(y, mod_size)
         for n = 1:length(y)
             
             % make a decision about the real part of the symbol
-            if real(y) < 0
+            if real(y(n)) < 0
                 est_sym(n) = -1/sqrt(2);
             else
                 est_sym(n) = 1/sqrt(2);
             end
             
             % make a decision about the imaginary part of the symbol
-            if imag(y) < 0
+            if imag(y(n)) < 0
                 est_sym(n) = est_sym(n) - 1i/sqrt(2);
             else
                 est_sym(n) = est_sym(n) + 1i/sqrt(2);
