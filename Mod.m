@@ -1,4 +1,4 @@
-% generates symbol sequence for bit sequence given a modulation size
+% function generates symbol sequence for bit sequence given a modulation size
 function Symbols = Mod(Bits, mod_size)
     
     % binary case
