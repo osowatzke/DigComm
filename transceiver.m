@@ -25,13 +25,8 @@ function BER = transceiver(Length,SNR,mod_size)
     % generate additive complex noise with unit variance
     Noise = NoiseGeneration(length(Symbols));
     
-    % determine the standard deviation of the noise
-    % note that this operation depends on the modulation size
-    if mod_size == 2
-        sigma = sqrt(2/(10^(SNR/10)));
-    elseif mod_size == 4
-        sigma = 1/sqrt(10^(SNR/10));
-    end
+    % same complex standard deviation can be used regardless of modulation size   
+    sigma = 1/sqrt(10^(SNR/10));
     
     % received signal contains both Symbols and Noise
     y = Symbols + sigma.*Noise;
@@ -41,7 +36,7 @@ function BER = transceiver(Length,SNR,mod_size)
     
     % determine estimated bit sequence
     est_bits = Demod(est_sym);
-    
+    length(est_bits)
     % determine number of errors in estimated bit sequence
     
     % initialize variable to store the number of errors
