@@ -27,9 +27,9 @@ function BER = transceiver(Length,SNR,mod_size)
     
     % different definitions of standard deviation for BPSK and 4QAM
     if mod_size == 2
-        sigma = sqrt(2/10^(SNR/10));
+        sigma = sqrt(1/10^(SNR/10));
     else
-        sigma = 1/sqrt(10^(SNR/10));
+        sigma = sqrt(1/(2*10^(SNR/10)));
     end
     
     % received signal contains both Symbols and Noise

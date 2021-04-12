@@ -1,5 +1,5 @@
-% function generates complex white Gaussion noise with zero mean and 
-% unit variance
+% function generates complex white Gaussion noise with zero mean 
+% and unit variance
 function Noise = NoiseGeneration(Length)
     
     % generate real noise of with variance 1/sqrt(2)
@@ -12,3 +12,4 @@ function Noise = NoiseGeneration(Length)
     Noise = real_noise + imag_noise;
     
 end
+

@@ -2,8 +2,7 @@
 function est_bits = Demod(est_sym)
 
     % all 4QAM symbols have an imaginary part
-    % determine the modulation size base on the imaginary part of the first
-    % symbol
+    % determine the modulation size base on the imaginary part of the first symbol
     if imag(est_sym(1)) ~= 0
         mod_size = 4;
     else
@@ -28,7 +27,7 @@ function est_bits = Demod(est_sym)
     % 4QAM case
     elseif mod_size == 4
         
-        % there are twice as many bits as there are symbols in 4QAM
+        % there are 2x as many bits as there are symbols in 4QAM
         est_bits = zeros(1,2*length(est_sym));
         
         % loop through all symbols to determine bits
