@@ -4,7 +4,7 @@ function plot_results
     SNR = -2:2:8;
     
     % argument of Q function
-    x = sqrt(10.^(SNR./10));
+    x = sqrt(2*10.^(SNR./10));
     
     % determine theoretical BER using erfc for Q function definition
     BER_ther = 1/2*erfc(x/sqrt(2));
@@ -29,7 +29,7 @@ function plot_results
     SNR = 2:2:10;
     
     % argument of Q function
-    x = sqrt(10.^(SNR./10));
+    x = sqrt(2*10.^(SNR./10));
     
     % determine theoretical BER using erfc for Q function definition
     BER_ther = 1/2*erfc(x/sqrt(2));
